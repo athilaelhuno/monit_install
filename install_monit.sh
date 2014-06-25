@@ -24,7 +24,7 @@ sudo sed -e 's/\# set logfile syslog facility log_daemon/set logfile syslog faci
 sudo sed -e 's/\# set pidfile \/var\/run\/monit.pid/set pidfile \/var\/run\/monit.pid/g' monitrc.ori > monitrc
 sudo sed -e 's/\# set idfile \/var\/.monit.id/set idfile \/var\/.monit.id/g' monitrc.ori > monitrc
 sudo sed -e 's/\# set statefile \/var\/.monit.state/set statefile \/var\/.monit.state/g' monitrc.ori > monitrc
-sudo sed -e 's/\#  include \/etc\/monit.d/\*/include \/etc\/monit.d\/\*/g' monitrc.ori > monitrc
+sudo sed -e 's/\#  include \/etc\/monit.d\/\*/include \/etc\/monit.d\/\*/g' monitrc.ori > monitrc
 
 cd $INSTALL_DIR
 
