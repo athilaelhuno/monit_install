@@ -34,7 +34,7 @@ sudo cp src/monit_init  /etc/init.d/monit
 sudo chmod +x /etc/init.d/monit
 sudo cp src/monit_default /etc/default/monit
 
-sudo mkdir /etc/monit.d
+sudo mkdir /etc/monit.d/
 sudo cp src/mpsanp /etc/monit.d
 sudo cp src/stopScreen.sh /usr/local/bin/
 
