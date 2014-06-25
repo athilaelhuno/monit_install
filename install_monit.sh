@@ -15,6 +15,7 @@ sudo chmod 700 /usr/local/etc/monitrc
 
 sudo cp /usr/local/etc/monitrc /usr/local/etc/monitrc.ori
 cd /usr/local/etc/
+sudo chmod 777 monitrc
 
 sudo sed -e 's/set daemon  60              # check services at 1-minute intervals/set daemon  10/' monitrc.ori > monitrc
 #sudo sed -e 's/# set logfile syslog facility log_daemon/set logfile syslog facility log_daemon/' monitrc.ori > monitrc
