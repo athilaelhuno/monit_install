@@ -21,10 +21,10 @@ sudo chmod 777 monitrc
 
 sudo sed -e 's/set daemon  60              \# check services at 1-minute intervals/set daemon  10/g' monitrc.ori > monitrc
 sudo sed -e 's/\# set logfile syslog facility log_daemon/set logfile syslog facility log_daemon/g' monitrc.ori > monitrc
-sudo sed -e 's/\# set pidfile \/var\/ru\n/monit.pid/set pidfile \/var\/run\/monit.pid/g' monitrc.ori > monitrc
-sudo sed -e 's/\# set idfile \/var\/.monit.id\/set idfile \/var\/.monit.id/g' monitrc.ori > monitrc
+sudo sed -e 's/\# set pidfile \/var\/run\/monit.pid/set pidfile \/var\/run\/monit.pid/g' monitrc.ori > monitrc
+sudo sed -e 's/\# set idfile \/var\/.monit.id/set idfile \/var\/.monit.id/g' monitrc.ori > monitrc
 sudo sed -e 's/\# set statefile \/var\/.monit.state/set statefile \/var\/.monit.state/g' monitrc.ori > monitrc
-sudo sed -e 's/\#  include \/etc\/monit.d/\*/include \/etc\/monit.d/\*/g' monitrc.ori > monitrc
+sudo sed -e 's/\#  include \/etc\/monit.d/\*/include \/etc\/monit.d\/\*/g' monitrc.ori > monitrc
 
 cd $INSTALL_DIR
 
