@@ -1,0 +1,77 @@
+check process AGIMonitor
+  matching "AGI"
+  start program = "/usr/local/bin/stopScreen.sh"
+  stop  program = "/usr/local/bin/stopScreen.sh"
+     
+
+check process BillingMonitor
+  matching "Billing"
+  start program = "/usr/local/bin/stopScreen.sh"
+  stop  program = "/usr/local/bin/stopScreen.sh"
+
+check process PresenceMonitor
+  matching "Presence"
+  start program = "/usr/local/bin/stopScreen.sh"
+  stop  program = "/usr/local/bin/stopScreen.sh"
+
+
+#check host "acd01" with address 161.196.36.179
+#    if failed port 5060 type udp protocol SIP
+#       and target s@172.16.40.16 maxforward 10
+#    then exec "/var/tmp/valor.sh"
+
+check host "acd02" with address 161.196.36.180
+    if failed port 5060 type udp protocol SIP
+       and target s@172.16.40.16 maxforward 10
+    then exec "/usr/local/bin/cc_monitor.py 161.196.36.180"
+
+check host "acd03" with address 161.196.36.181
+    if failed port 5060 type udp protocol SIP
+       and target s@172.16.40.16 maxforward 10
+    then exec "/usr/local/bin/cc_monitor.py 161.196.36.181"
+
+check host "acd04" with address 161.196.36.182
+    if failed port 5060 type udp protocol SIP
+       and target s@172.16.40.16 maxforward 10
+    then exec "/usr/local/bin/cc_monitor.py 161.196.36.182"
+
+check host "acd05" with address 161.196.36.183
+    if failed port 5060 type udp protocol SIP
+       and target s@172.16.40.16 maxforward 10
+    then exec "/usr/local/bin/cc_monitor.py 161.196.36.183"
+
+check host "acd06" with address 161.196.36.184
+    if failed port 5060 type udp protocol SIP
+       and target s@172.16.40.16 maxforward 10
+    then exec "/usr/local/bin/cc_monitor.py 161.196.36.184"
+
+check host "acd07" with address 161.196.36.185
+    if failed port 5060 type udp protocol SIP
+       and target s@172.16.40.16 maxforward 10
+    then exec "/usr/local/bin/cc_monitor.py 161.196.36.185"
+
+check host "acd08" with address 161.196.36.186
+    if failed port 5060 type udp protocol SIP
+       and target s@172.16.40.16 maxforward 10
+    then exec "/usr/local/bin/cc_monitor.py 161.196.36.186"
+
+check host "acd09" with address 161.196.36.187
+    if failed port 5060 type udp protocol SIP
+       and target s@172.16.40.16 maxforward 10
+    then exec "/usr/local/bin/cc_monitor.py 161.196.36.187"
+
+check host "acd10" with address 161.196.36.188
+    if failed port 5060 type udp protocol SIP
+       and target s@172.16.40.16 maxforward 10
+    then exec "/usr/local/bin/cc_monitor.py 161.196.36.188"
+
+check host "acd11" with address 161.196.36.163
+    if failed port 5060 type udp protocol SIP
+       and target s@172.16.40.16 maxforward 10
+    then exec "/usr/local/bin/cc_monitor.py 161.196.36.163"
+
+check host "acd12" with address 161.196.36.164
+    if failed port 5060 type udp protocol SIP
+       and target s@172.16.40.16 maxforward 10
+    then exec "/usr/local/bin/cc_monitor.py 161.196.36.164"
+
