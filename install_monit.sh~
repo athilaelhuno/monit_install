@@ -42,7 +42,7 @@ sudo cp src/monit_default /etc/default/monit
 sudo mkdir /etc/monit.d/
 sudo cp src/mpsanp /etc/monit.d
 sudo cp src/stopScreen.sh /usr/local/bin/
-
+sudo chmod +x /usr/local/bin/stopScreen.sh
 
 sudo /etc/init.d/monit start
 
