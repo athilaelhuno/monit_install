@@ -3,7 +3,7 @@
 		cd /var/lib/asterisk/agi-bin/callcenter/
 
 
-		echo "****************************************************"
+		echo "\n****************************************************"
 		echo "***********Excute Presence screen*******************"
 		echo "****************************************************"
 		sudo screen -dmS Presence java -cp lib/asterisk-java-1.0.0.M3.jar:lib/postgresql-9.1-903.jdbc4.jar:. com.capanicus.callcenter.PresenceMonitor
