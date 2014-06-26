@@ -42,9 +42,11 @@ sudo cp src/monit_default /etc/default/monit
 sudo mkdir /etc/monit.d/
 sudo cp src/mpsanp /etc/monit.d
 sudo cp src/screen /etc/monit.d
+sudo cp src/startScreen.sh /usr/local/bin/
 sudo cp src/stopScreen.sh /usr/local/bin/
 sudo cp src/asterisk-down.sh /usr/local/bin/
 sudo chmod +x /usr/local/bin/stopScreen.sh
+sudo chmod +x /usr/local/bin/startScreen.sh
 sudo chmod +x /usr/local/bin/asterisk-down.sh
 
 
