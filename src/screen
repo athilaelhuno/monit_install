@@ -1,0 +1,18 @@
+check process BillingMonitor
+  matching "Billing"
+  start program = "/usr/local/bin/cc_monitor.py xxx.xxx.xxx.xxx"
+  stop  program = "/usr/local/bin/AGIStop.sh"
+  if 2 restart within 3 cycles then exec "/usr/local/bin/asterisk-down.sh"
+
+check process PresenceMonitor
+  matching "Presence"
+  start program = "/usr/local/bin/cc_monitor.py xxx.xxx.xxx.xxx"
+  stop  program = "/usr/local/bin/AGIStop.sh"
+  if 2 restart within 3 cycles then exec "/usr/local/bin/asterisk-down.sh"
+
+
+check process AGIMonitor
+  matching "AGI"
+  start program = "/usr/local/bin/cc_monitor.py xxx.xxx.xxx.xxx"
+  stop  program = "/usr/local/bin/AGIStop.sh"
+  if 2 restart within 3 cycles then exec "/usr/local/bin/asterisk-down.sh"

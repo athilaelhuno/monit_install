@@ -41,8 +41,30 @@ sudo cp src/monit_default /etc/default/monit
 
 sudo mkdir /etc/monit.d/
 sudo cp src/mpsanp /etc/monit.d
+sudo cp src/screen /etc/monit.d
 sudo cp src/stopScreen.sh /usr/local/bin/
+sudo cp src/asterisk-down.sh /usr/local/bin/
 sudo chmod +x /usr/local/bin/stopScreen.sh
+sudo chmod +x /usr/local/bin/asterisk-down.sh
+
+
+
+RUN=1
+COUNT=0
+
+while [ $RUN==1 ];do
+        interface=`sudo ifconfig eth$COUNT | grep inet\ addr\: | awk '{ print $2 }' | cut -d: -f2`
+        if [[ $interface =~ .*161.196..* ]];then
+                sudo chmod 777 /etc/monit.d/screen
+                cd /etc/monit.d
+                sudo cp screen screen.ori
+                sudo sed -e 's/  start program = "\/usr\/local\/bin\/cc_monitor.py xxx.xxx.xxx.xxx"/  start program = "\/usr\/local\/bin\/cc_monitor.py '$interface'"/g' screen.ori > screen
+                sudo rm -rf screen.ori
+                break
+        fi
+        let COUNT=$COUNT+1
+done
+
 
 sudo /etc/init.d/monit start
 

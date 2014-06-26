@@ -1,20 +1,3 @@
-check process AGIMonitor
-  matching "AGI"
-  start program = "/usr/local/bin/stopScreen.sh"
-  stop  program = "/usr/local/bin/stopScreen.sh"
-     
-
-check process BillingMonitor
-  matching "Billing"
-  start program = "/usr/local/bin/stopScreen.sh"
-  stop  program = "/usr/local/bin/stopScreen.sh"
-
-check process PresenceMonitor
-  matching "Presence"
-  start program = "/usr/local/bin/stopScreen.sh"
-  stop  program = "/usr/local/bin/stopScreen.sh"
-
-
 check host "acd01" with address 161.196.36.179
     if failed port 5060 type udp protocol SIP
        and target s@172.16.40.16 maxforward 10
