@@ -120,12 +120,12 @@ if  ipvalid and localip==ipserver:
         print ids[0]
         #stopast = os.popen("sudo /etc/init.d/asterisk stop")
         #output = stopast.read()[:-1]
-	    #print "###### Asterisk Says ######"
-	    #print output
+	print "###### Asterisk Says ######"
+	#print output
         #stopast.close()
-	    #update table on astsipserver	
+	#update table on astsipserver	
         ast_status_cur= db.cursor()
-	    sipserver=str(localip)
+	sipserver=str(localip)
         ast_status_cur.execute("update astsipserver set status=0 ,sensed=1 where sipaddress='%s'"%(sipserver))
         db.commit()
 	print "###### node is out of callcenter :"+sipserver
