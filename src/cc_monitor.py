@@ -26,7 +26,7 @@ def Dbconection():
 
 
 #config variables
-interface='eth0'
+interface='eth2'
 con = None
 
 #get local ip address
