@@ -28,4 +28,10 @@
 		echo "****************************************************"
 		sudo screen -list
 
+
+
+		sudo monit monitor BillingMonitor
+		sudo monit monitor PresenceMonitor
+		sudo monit monitor AGIMonitor
+
 		/usr/local/bin/cc_monitor.py start
